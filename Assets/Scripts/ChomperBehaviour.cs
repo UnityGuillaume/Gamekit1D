@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChomperBehaviour : Behaviour1D
+public class ChomperBehaviour : Behaviour1D, IDamageable
 {
     public enum ChomperState
     {
@@ -65,6 +65,11 @@ public class ChomperBehaviour : Behaviour1D
         }
 
         return false;
+    }
+
+    public void Damaged(Behaviour1D damager)
+    {
+        Destroy(gameObject);
     }
 
     //=== State Update Functions
